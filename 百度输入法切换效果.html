@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+	*{
+		padding:0;
+		margin:0;
+		list-style:none;
+	}
+	.box{
+		width:200px;
+		margin:30px auto;
+		position:relative;
+	}
+	.ul1{
+		position:absolute;
+		left:-10px;
+		top:30px;
+		border:1px solid #ccc;
+		width:50px;
+		text-align:center;
+		display:none;
+	}
+	.div1{
+		float:left;
+		width:20px;
+		height:20px;
+		border:1px solid #ccc;
+		margin-left:5px;
+}
+	.text{
+		float:left;
+		}
+		.hr{
+			height:1px;
+			background-color:#ccc;}
+</style>
+<script>
+window.onload = function(){
+	var oTx = document.querySelectorAll('span')[0];
+	var oDiv = document.querySelectorAll('div')[1];
+	var oUl = document.querySelectorAll('ul')[0];
+	var aLi = oUl.getElementsByTagName('li');
+	oDiv.onclick = function(){
+		if(oUl.style.display == 'block'){
+			oUl.style.display = 'none';
+		}else{
+			oUl.style.display = 'block';
+		}
+	};
+	for(var i = 0;i<aLi.length;i++){
+		aLi[i].index = i;
+		aLi[i].onclick = function(){
+			oTx.innerHTML = this.innerHTML;
+			oUl.style.display = 'none';
+		};
+		aLi[aLi.length-1].onclick = function(){
+			oUl.style.display = 'none';
+		};
+	}
+};
+</script>
+</head>
+
+<body>
+	<div class="box">
+		<span class="text">手写</span>
+		<ul class="ul1">
+			<li>手写</li>
+			<li>拼音</li>
+			<li class="hr"></li>
+			<li>关闭</li>
+		</ul>
+		<div class="div1"></div>
+	</div>
+</body>
+</html>

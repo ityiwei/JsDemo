@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script>
+	window.onload = function(){
+		function toDou(n){
+			return n<10?'0'+n:''+n;
+		}
+		function rnd(m,n){
+			return parseInt(m+Math.random()*(n-m));
+		}
+		function findInArr(arr,num){
+			for(var i =0;i<arr.length;i++){
+				if(arr[i]==num){
+					return true;
+				}
+			}
+			return false;
+		}
+		var arr = [];
+		while(arr.length<7){
+			var num = toDou(rnd(1,32));
+			if(findInArr(arr,num) == false){
+				arr.push(num);
+			}
+		}
+		document.write(arr.sort());
+	};
+</script>
+</head>
+
+<body>
+</body>
+</html>

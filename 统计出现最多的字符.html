@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script>
+	var str = 'aasssdfffgdgdggsdgfgerreeret';
+	var json = {};
+	var arr = str.split('');
+	for(var i = 0;i<arr.length;i++){
+		if(json[arr[i]] == undefined){
+			json[arr[i]] = 1;
+		}else{
+			json[arr[i]]++;
+		}
+	}
+	var num = 0;
+	var s = '';
+	for(name in json){
+		if(json[name]>num){
+			num = json[name];
+			s = name;
+		}
+	}
+	console.log(num,s);
+</script>
+</head>
+
+<body>
+</body>
+</html>

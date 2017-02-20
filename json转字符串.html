@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script>
+	var json = {user:"leo", age:18, class:"javascript"} ;
+	var arr = [];
+	for(name in json){
+		arr.push(name+'='+json[name]);
+	}
+	var str = arr.join('&');
+	console.log(str);
+</script>
+</head>
+
+<body>
+</body>
+</html>

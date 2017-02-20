@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script>
+	function removeOdd(arr){
+		for(var i = 0;i<arr.length;i++){
+			if(arr[i]%2 == 1){
+				arr.splice(i,1);
+				i--;
+			}
+		}
+		return arr;
+	}
+	var arr = [1,1,2,3,4,5,56,6,7,7];
+	console.log(removeOdd(arr));
+</script>
+</head>
+
+<body>
+</body>
+</html>

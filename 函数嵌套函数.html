@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script>
+	function fn(a){
+		return {
+			plus:function(b){
+				return {
+					minus:function(c){
+						return a+b-c;
+					}
+				}
+			}
+		}
+	}
+	var a = fn(5).plus(3).minus(6);
+	alert(a);
+</script>
+</head>
+
+<body>
+</body>
+</html>

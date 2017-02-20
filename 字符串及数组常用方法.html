@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script>
+	var str = 'abcdefg';
+	//console.log(str.charAt(0)); 通过下标返回字符
+	//console.log(str.indexOf('g'));通过字符返回所在的下标
+	//console.log(str.toUpperCase()); 大写
+	//toLowperCase()小写
+	//首字母大写
+/*	var arr = str.split();
+	for(var i = 0;i<arr.length;i++){
+		arr[i] = arr[i].charAt(0).toUpperCase()+arr[i].substring(1);
+	}
+	console.log(arr.join(' '));
+*/	
+	//console.log(str.lastIndexOf('a'));// 从后面查找，找到返回字符所在的小标，未找到返回-1；
+	//console.log(str.split());字符串转数组
+	//console.log(str.substring(2))从指定位置截取
+	var arr = [1,2,3,7,5];
+	var arr2 = [6,7,8,9];
+	//var arr3 = arr.concat(arr2);//数组连接
+	//console.log(arr3);
+	//console.log(arr.reverse());//倒序排列
+	//console.log(arr.sort());//排序
+	//console.log(arr.join(' '));//数组转字符串
+	//arr.push(3);//从后面插入 arr.push(3)返回新数组长度
+	//arr.pop()//从后面删除
+	//arr.unshift(0)//从前面插入
+	//console.log(arr.unshift(1));//返回新数组长度
+	//arr.shift(); //从前面删除
+	arr.splice(1,1,'a');//从下标为1的位置删除一个添加一个新元素
+	console.log(arr);//从数组中添加/删除项目，然后返回被删除的项目。
+</script>
+</head>
+
+<body>
+</body>
+</html>

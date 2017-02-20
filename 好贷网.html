@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+	ul{display:none;}
+</style>
+<script>
+	window.onload = function(){
+		var oTxt = document.getElementById('txt');
+		var oBtn = document.getElementById('btn');
+		var oTime = document.getElementById('time');
+		var aLi = document.getElementsByTagName('li');
+		var oUl = document.querySelectorAll('ul')[0];
+		var arr =['个月','年','个月','年'];
+		oBtn.onclick = function(){
+			if(oUl.style.display =='block'){
+				oUl.style.display = 'none';
+			}else{
+				oUl.style.display = 'block';
+			}
+		};
+		for(var i = 0;i<aLi.length;i++){
+			aLi[i].index = i;
+			aLi[i].onclick =function(){
+				oTxt.value = parseInt(this.innerHTML);
+				oTime.innerHTML = arr[this.index];
+			};
+		}
+	};
+</script>
+</head>
+
+<body>
+	<input type="text" id="txt"><span id="time">年</span>
+	<input type="button" id="btn" value="选择">
+	<ul>
+		<li>6个月</li>
+		<li>1年</li>
+		<li>18个月</li>
+		<li>2年</li>
+	</ul>
+</body>
+</html>

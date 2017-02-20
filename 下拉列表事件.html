@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script>
+	window.onload = function(){
+		var oS = document.getElementById('sele');
+		var oNewOption = new Option('海淀',4); //添加新的option（文本，值）
+		oS.options.add(oNewOption);//添加给谁  //删除remove(0)
+		oS.onchange = function(){
+			alert(oS.options[oS.options.selectedIndex].text);
+		};
+	};
+</script>
+</head>
+
+<body>
+	<select id="sele">
+		<option value="0">北京</option>
+		<option value="1">朝阳</option>
+		<option value="2">东城</option>
+		<option value="3">西城</option>
+	</select>
+</body>
+</html>

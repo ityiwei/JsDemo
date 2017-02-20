@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script>
+	var arr = [1,2,3,3,4,4,4,43323,23,34,5345,334];
+	function findMax(start,arr){
+		var iMax = -99999;
+		var iMaxIndex = -1;
+		for(var i = start;i<arr.length;i++){
+			if(arr[i]>iMax){
+				iMax = arr[i];
+				iMaxIndex = i;
+			}
+		}
+		return iMaxIndex;
+	}
+	for(var i =0;i<arr.length;i++){
+		iMaxIndex = findMax(i,arr);
+		var tmp = 0;
+		tmp = arr[iMaxIndex];
+		arr[iMaxIndex] = arr[i];
+		arr[i] = tmp;
+	}
+	console.log(arr);
+</script>
+</head>
+
+<body>
+</body>
+</html>

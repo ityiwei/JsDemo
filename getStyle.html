@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+	.div1{ width:100px;
+	height:100px;
+	border:1px solid #ccc;
+	}
+</style>
+<script>
+	window.onload =function(){
+		function getStyle(obj,name){
+			/*重点return*/
+			return obj.courrentStyle?obj.courrentStyle[name]:getComputedStyle(obj,false)[name];
+		};
+		var oDiv = document.querySelectorAll('div')[0];
+		var oTn = document.querySelector('input');
+		oTn.onclick = function(){
+			alert(getStyle(oDiv,'width'));
+		};
+	};
+</script>
+</head>
+
+<body>
+	<div class="div1"></div>
+	<input type="button" value="获取样式">
+</body>
+</html>
