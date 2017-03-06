@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+	*{
+		margin:0;
+		padding:0;
+		background-color:#000;
+	}
+	body{
+		color:#C00;
+		font-size:30px;
+	}
+	span{
+		opacity:0;
+		filter:alpha(opacity=0); 
+		}
+</style>
+<script src="jsFn/move.js"></script>
+<script>
+	window.onload = function(){
+		var str = '老人消瘦而憔悴，脖颈上有些很深的皱纹。腮帮上有些褐斑，那是太阳在热带海面上反射的光线所引起的良性皮肤癌变。褐斑从他脸的两侧一直蔓延下去，他的双手常用绳索拉大鱼，留下了刻得很深的伤疤。但是这些伤疤中没有一块是新的。它们象无鱼可打的沙漠中被侵蚀的地方一般古老。他身上的一切都显得古老，除了那双眼睛，它们象海水一般蓝，是愉快而不肯认输的。';
+		for(var i = 0;i<str.length;i++){
+			var oSpan = document.createElement('span');
+			oSpan.innerHTML = str.charAt(i);
+			document.body.appendChild(oSpan);
+		}
+		var aSpan = document.body.children;
+		console.log(aSpan.length);
+		var n = 0;
+		var timer;
+		timer = setInterval(function(){
+			move(aSpan[n],{opacity:1});
+			n++;
+			if(n == aSpan.length){
+				clearInterval(timer);
+			}
+		},500);
+	};
+</script>
+</head>
+
+<body>
+</body>
+</html>

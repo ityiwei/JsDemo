@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>漂浮广告</title>
+<style>
+	*{
+		margin:0;
+		padding:0;
+	}
+	.ad{
+		width:200px;
+		height:80px;
+		background-color:#ccc;
+		position:absolute;
+		top:0;
+		left:0;
+	}
+</style>
+<script>
+	window.onload = function(){
+		var oAd = document.querySelector('.ad');
+		var iSpeedX = 1;
+		var iSpeedY = 1;
+		var timer;
+		function MoveAd(obj){
+			//返回一个匿名函数，解决定时器函数不能传参的问题
+			return function(){
+				var l = obj.offsetLeft + iSpeedX;
+				var t = obj.offsetTop + iSpeedY;
+				var Cl = (document.documentElement.clientWidth || document.body.clientWidth) - obj.offsetWidth;
+				var Ct = (document.documentElement.clientHeight || document.body.clientHeight) - obj.offsetHeight;
+				if(l >= Cl){
+					l = Cl;
+					iSpeedX*=-1;
+				}else if( l <= 0){
+					l = 0;
+					iSpeedX*=-1;
+				}
+				if(t >= Ct){
+					t = Ct;
+					iSpeedY*=-1;
+				}else if(t <= 0){
+					t=0;
+					iSpeedY*=-1;
+				}
+				
+				obj.style.left = l + 'px';
+				obj.style.top = t + 'px';
+				obj.innerHTML = l +'px'+'<br/>'+t+'px';
+			}
+	};
+		timer = setInterval(MoveAd(oAd),36);
+	};
+</script>
+</head>
+
+<body>
+	<div class="ad"></div>
+</body>
+</html>
